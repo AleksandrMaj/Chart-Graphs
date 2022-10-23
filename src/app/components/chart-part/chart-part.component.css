@@ -1,0 +1,8 @@
+.chart-part {
+  aspect-ratio: 1/0.75;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b1d1f;
+}
