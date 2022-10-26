@@ -12,8 +12,12 @@ export class AddChartPopupComponent implements OnInit {
   ngOnInit(): void {
     // @ts-ignore
     document.getElementById("popup").addEventListener('click',event => {
-      if(event.target == document.getElementById("popup-window")) return;
+      if(event.target != document.getElementById("popup")) return;
       ChartsComponent.showPopup = false;
     })
+  }
+
+  AddChart() {
+    ChartsComponent.showPopup = false;
   }
 }
