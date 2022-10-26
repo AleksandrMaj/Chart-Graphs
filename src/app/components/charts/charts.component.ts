@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-charts',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChartsComponent implements OnInit {
 
-  constructor() { }
+  public static showPopup: boolean;
+  public classRefence = ChartsComponent;
+
+  constructor() {
+    ChartsComponent.showPopup = false;
+  }
 
   ngOnInit(): void {
   }
-
 }

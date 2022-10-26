@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ChartsComponent} from "../charts/charts.component";
 
 @Component({
   selector: 'app-add-chart-button',
@@ -13,6 +14,6 @@ export class AddChartButtonComponent implements OnInit {
   }
 
   openChartPopUp() {
-    console.log("Dieser Button hat funktioniert!")
+    ChartsComponent.showPopup = true;
   }
 }
