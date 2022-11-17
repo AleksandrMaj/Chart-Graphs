@@ -1,0 +1,131 @@
+.container {
+  display: grid;
+  grid-template-areas:
+    'picture name rate value checkbox'
+    'picture name rate value checkbox';
+  grid-template-columns: 0.75fr 1fr 0.9fr 1.3fr 0.7fr;
+  grid-template-rows: 1fr 1fr;
+  border-radius: 5px;
+}
+
+.container:hover {
+  background: #2D3133;
+}
+
+.crypto-image-container {
+  display: flex;
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  grid-area: picture;
+  border-radius: 50%;
+}
+
+.crypto-image {
+  margin: auto;
+  height: auto;
+  width: 50%;
+}
+
+.crypto-name-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-area: name;
+  height: fit-content;
+  margin: auto auto auto 5px;
+}
+
+.text-container {
+  display: grid;
+  flex-direction: column;
+}
+
+.crypto-name {
+  font-family: 'Roboto', sans-serif;
+  color: #E8E6E3;
+  font-weight: 800;
+  font-size: 1.3em;
+  height: fit-content;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.crypto-shortage {
+  color: #B2ACA2;
+  font-family: 'Roboto', sans-serif;
+  height: fit-content;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.current-value-container {
+  grid-area: value;
+  justify-self: end;
+  align-self: center;
+}
+
+.current-value-neutral {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #DFDCD8;
+}
+
+.current-rate-container {
+  grid-area: rate;
+  justify-self: end;
+  align-self: center;
+}
+
+.current-rate {
+  /*font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #DFDCD8;
+  border-radius: 5px;
+  height: 20px;*/
+  visibility: hidden;
+}
+
+.current-value-positive {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #DFDCD8;
+  background-color: rgba(0, 165, 100, 0.5);
+  border-radius: 5px;
+}
+
+.current-value-positive:before {
+  content: '▲ ';
+}
+
+.current-value-negative {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #DFDCD8;
+  background-color: rgba(220, 44, 40, 0.5);
+  border-radius: 5px;
+}
+
+.current-value-negative:before {
+  content: '▼ ';
+}
+
+.checkbox-container {
+  grid-area: checkbox;
+  margin: auto;
+}
+
+.checkbox:checked {
+  margin: auto;
+  width: 20px;
+  aspect-ratio: 1 / 1;
+  accent-color: #DC2C28;
+}
+
+.checkbox:not(:checked) {
+  visibility: hidden;
+}
+
+
+
+
+

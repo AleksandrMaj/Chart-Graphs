@@ -11,7 +11,7 @@ export class ChartsComponent implements OnInit {
   public classRefence = ChartsComponent;
 
   constructor() {
-    ChartsComponent.showPopup = false;
+    ChartsComponent.showPopup = true;
   }
 
   ngOnInit(): void {

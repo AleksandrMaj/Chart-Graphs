@@ -9,8 +9,8 @@
 
 .popup-background .popup {
   background: #252729;
-  width: 400px;
-  height: 500px;
+  width: 500px;
+  height: 600px;
   margin: 0 auto;
   position: relative;
   top: 50%;
@@ -34,10 +34,18 @@
 }
 
 .scroll-list {
-  /*background: rgba(50, 50, 50, 0.5);*/
   margin: 5px auto auto auto;
   width: 95%;
   height: 73%;
+  overflow: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.scroll-list::-webkit-scrollbar {
+  display: none;
 }
 
 .add-button-section {
@@ -53,10 +61,10 @@
   color: #E8E6E3;
   border: none;
   font-family: 'Roboto', sans-serif;
+  font-size: 0.95em;
   font-weight: 500;
-  width: 60px;
+  /*width: 60px;*/
   height: 35px;
   border-radius: 3px;
   margin-top: 10px;
 }
-
