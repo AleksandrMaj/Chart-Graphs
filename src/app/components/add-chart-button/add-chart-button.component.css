@@ -8,8 +8,8 @@
 
 .add-button {
   background-color: #1b1d1f;
-  width: 75px;
-  height: 75px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   border-width: 0;
   font-size: 2em;
@@ -21,6 +21,7 @@
   content: "+";
   font-family: 'Roboto', sans-serif;
   font-weight: 350;
+  font-size: 1.5em;
 }
 
 .add-button:hover {
@@ -31,6 +32,7 @@
   color: #E8E6E3;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+  font-size: 1.2em;
 }
 
 .add-button-text:after {

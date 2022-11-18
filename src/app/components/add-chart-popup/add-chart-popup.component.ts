@@ -19,6 +19,7 @@ export class AddChartPopupComponent implements OnInit {
     // @ts-ignore
     document.getElementById("popup").addEventListener('click', event => {
       if (event.target != document.getElementById("popup")) return;
+      // @ts-ignore
       ChartsComponent.showPopup = false;
     })
 
@@ -37,8 +38,8 @@ export class AddChartPopupComponent implements OnInit {
       const checkbox = currentNode.lastChild.lastChild.lastChild
       checkbox.checked = !checkbox.checked
 
-      if(checkbox.checked) this.selectedCryptos++;
-      if(!checkbox.checked) this.selectedCryptos--;
+      if (checkbox.checked) this.selectedCryptos++;
+      if (!checkbox.checked) this.selectedCryptos--;
     })
   }
 
