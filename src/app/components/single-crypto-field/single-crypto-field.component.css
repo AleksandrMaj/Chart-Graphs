@@ -17,7 +17,6 @@
   align-items: center;
   aspect-ratio: 1 / 1;
   grid-area: picture;
-  border-radius: 50%;
 }
 
 .crypto-image {

@@ -1,8 +1,149 @@
+* {
+  /*border: #a30000 1px solid;*/
+}
+
 .chart-part {
+  display: flex;
   aspect-ratio: 1/0.75;
   border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background-color: #1b1d1f;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.left-container {
+  display: flex;
+}
+
+.image-container {
+  display: flex;
+  position: relative;
+}
+
+.image-container:hover .crypto-image {
+  filter: grayscale(100%) blur(5px);
+  transition: 0.5s;
+  opacity: 0.5;
+}
+
+.image-container:hover .delete {
+  opacity: 100%;
+  transition: 0.5s;
+}
+
+.crypto-image {
+  width: 125px;
+  height: 125px;
+  aspect-ratio: 1/1;
+  max-width: 225px;
+  transition: 1s;
+  position: relative;
+  z-index: 0;
+  opacity: 1;
+}
+
+.delete {
+  opacity: 0;
+  color: #DC2C28;
+  background-color: transparent;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+}
+
+.delete-icon {
+  color: #DC2C28;
+  width: 70%;
+  opacity: 80%;
+}
+
+.crypto-name-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: fit-content;
+  margin-left: 20px;
+}
+
+.crypto-name {
+  font-family: 'Roboto', sans-serif;
+  color: #E8E6E3;
+  font-weight: 800;
+  font-size: 2.5em;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.crypto-shortage {
+  color: #B2ACA2;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.current-value {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #DFDCD8;
+  font-size: 1.75em;
+  width: fit-content;
+}
+
+.current-rate-container {
+  justify-self: end;
+  align-self: center;
+  font-size: 1.3em;
+}
+
+.current-rate {
+  /*font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #DFDCD8;
+  border-radius: 5px;
+  height: 20px;*/
+  visibility: hidden;
+}
+
+.current-value-container {
+  justify-self: end;
+  align-self: center;
+}
+
+.current-value-positive {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #DFDCD8;
+  background-color: rgba(0, 165, 100, 0.5);
+  border-radius: 5px;
+}
+
+.current-value-positive:before {
+  content: '▲ ';
+}
+
+.current-value-negative {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #DFDCD8;
+  background-color: rgba(220, 44, 40, 0.5);
+  border-radius: 5px;
+}
+
+.current-value-negative:before {
+  content: '▼ ';
 }

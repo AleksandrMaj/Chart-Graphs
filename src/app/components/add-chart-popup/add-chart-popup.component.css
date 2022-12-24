@@ -4,7 +4,9 @@
   height: 100%;
   top: 0;
   right: 0;
-  backdrop-filter: blur(7px);
+  backdrop-filter: blur(10px) brightness(75%);
+  z-index: 1;
+  animation: fadeIn 1s;
 }
 
 @keyframes fadeIn {

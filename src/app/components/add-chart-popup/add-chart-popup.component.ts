@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import {ChartsComponent} from "../charts/charts.component";
 import {HttpClient} from "@angular/common/http";
 
@@ -8,6 +8,9 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./add-chart-popup.component.css']
 })
 export class AddChartPopupComponent implements OnInit {
+
+  @Output() newCryptosToAddEvent = new EventEmitter<string[]>();
+  @Input() excludeCryptoList: string[] = [];
   supportedCryptos: any = {};
   supportedCryptosKeys: string[] = [];
   selectedCryptos: number = 0;
@@ -24,6 +27,13 @@ export class AddChartPopupComponent implements OnInit {
     })
 
     this.http.get('http://localhost:3080/supportedcryptos').subscribe(data => {
+      for (const [key, value] of Object.entries(data)) {
+        if(this.excludeCryptoList.includes(key)) {
+          // @ts-ignore
+          delete data[key];
+        }
+      }
+
       this.supportedCryptos = data;
       this.supportedCryptosKeys = Object.keys(data);
     });
@@ -44,6 +54,17 @@ export class AddChartPopupComponent implements OnInit {
   }
 
   AddChart() {
+    const cryptoElements = document.querySelectorAll('.checkbox:checked');
     ChartsComponent.showPopup = false;
+
+    if (cryptoElements.length == 0) return;
+
+    let cryptoShortcuts: string[] = [];
+
+    cryptoElements.forEach(value => {
+      cryptoShortcuts.push(value.id)
+    })
+
+    this.newCryptosToAddEvent.emit(cryptoShortcuts)
   }
 }

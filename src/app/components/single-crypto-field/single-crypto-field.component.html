@@ -11,7 +11,7 @@
   </div>
 
   <div class="current-rate-container">
-    <p [ngClass]="{'current-rate': rate == 0, 'current-value-negative': rate < 0, 'current-value-positive': rate > 0}">{{rate}}%&nbsp;</p>
+    <p [ngClass]="{'current-rate': rate == 0 || rate == null, 'current-value-negative': rate < 0, 'current-value-positive': rate > 0}">{{rate}}%&nbsp;</p>
   </div>
 
   <div class="current-value-container">
@@ -19,7 +19,6 @@
   </div>
 
   <div class="checkbox-container">
-    <input type="checkbox" name="ADA" value="Cardano" class="checkbox">
+    <input type="checkbox" class="checkbox" id="{{crypto}}">
   </div>
-
 </div>

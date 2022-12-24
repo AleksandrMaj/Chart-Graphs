@@ -11,7 +11,7 @@ export class SingleCryptoFieldComponent implements OnInit {
   @Input() crypto: string = '';
   name: String = 'ERROR';
   currentValue: number = -1;
-  currentValueDisplay: String = "";
+  currentValueDisplay: String = "ERROR";
   rate: number = 0;
 
   constructor(private comp: AddChartPopupComponent) {

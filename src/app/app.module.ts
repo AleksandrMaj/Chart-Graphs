@@ -8,6 +8,8 @@ import { AddChartButtonComponent } from './components/add-chart-button/add-chart
 import { ChartPartComponent } from './components/chart-part/chart-part.component';
 import { AddChartPopupComponent } from './components/add-chart-popup/add-chart-popup.component';
 import { SingleCryptoFieldComponent } from './components/single-crypto-field/single-crypto-field.component';
+import {NgxEchartsModule} from "ngx-echarts";
+import { CryptoChartComponent } from './components/crypto-chart/crypto-chart.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,18 @@ import { SingleCryptoFieldComponent } from './components/single-crypto-field/sin
     ChartPartComponent,
     AddChartPopupComponent,
     SingleCryptoFieldComponent,
+    CryptoChartComponent,
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts')
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+//https://www.npmjs.com/package/ngx-echarts
