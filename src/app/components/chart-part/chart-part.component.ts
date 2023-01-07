@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {CryptoChartComponent} from "../crypto-chart/crypto-chart.component";
 
 @Component({
   selector: 'app-chart-part',
@@ -10,13 +11,13 @@ export class ChartPartComponent implements OnInit
 {
   @Output() removeCrypto = new EventEmitter<string>();
   @Input() cryptoShortcut: string = '';
-  cryptoData: Object = {};
   name: string = "ERROR";
   rate: number = -1;
   currentValue: number = -1;
   dailyData: Object = {};
   weeklyData: Object = {};
   monthlyData: Object = {};
+  chartData = this.dailyData;
 
   static timeArr: string[] = ['Daily', 'Weekly', 'Monthly'];
 
@@ -49,6 +50,7 @@ export class ChartPartComponent implements OnInit
               case 'Daily':
               {
                 this.dailyData = data;
+                this.chartData = this.dailyData
                 break;
               }
               case 'Weekly':
@@ -81,6 +83,27 @@ export class ChartPartComponent implements OnInit
           this.currentValue = data["currentValue"];
         }
       })
+    }
+  }
+
+  updateChart(timeType: string):void {
+    switch (timeType)
+    {
+      case 'daily':
+      {
+        this.chartData = this.dailyData
+        break;
+      }
+      case 'weekly':
+      {
+        this.chartData = this.weeklyData
+        break;
+      }
+      case 'monthly':
+      {
+        this.chartData = this.monthlyData
+        break;
+      }
     }
   }
 }

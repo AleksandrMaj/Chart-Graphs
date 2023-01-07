@@ -31,6 +31,13 @@
       <div class="crypto-name-container">
         <p class="crypto-name">{{name}}</p>
         <p class="crypto-shortage">{{cryptoShortcut}}</p>
+
+        <div class="time-button-container">
+          <button class="time-button"(click)="updateChart('daily')">D</button>
+          <button class="time-button" (click)="updateChart('weekly')">W</button>
+          <button class="time-button" (click)="updateChart('monthly')">M</button>
+        </div>
+
       </div>
     </div>
 
@@ -42,4 +49,5 @@
       <p class="current-value">{{currentValue}} <b>$</b></p>
     </div>
   </div>
+    <app-crypto-chart [cryptoData]="chartData" [cryptoShortcut]="cryptoShortcut"></app-crypto-chart>
 </div>

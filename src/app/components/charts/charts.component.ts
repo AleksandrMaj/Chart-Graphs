@@ -22,12 +22,14 @@ export class ChartsComponent implements OnInit
   {
   }
 
-  AddChart(cryptoShortcutList: string[]) //TODO Muss abgeändert werden! Glaube ich hab jetzt nirgendwo, dass die Cryptos in den local storage geschrieben werden
+  AddChart(cryptoShortcutList: string[])
   {
       cryptoShortcutList.forEach(shortcut => {
         this.LocalStorageService.saveCryptoPersistently(shortcut)
         this.cryptoDataKeys.push(shortcut)
       })
+    this.cryptoDataKeys = this.LocalStorageService.getAllPersistentCrypto();
+    console.log(this.cryptoDataKeys)
   }
 
   removeCryptoChart(cryptoShortcut: string) {
